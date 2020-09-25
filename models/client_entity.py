@@ -1,4 +1,4 @@
-from app.fabricas.db_factory import DbFactory
+from fabricas.db_factory import DbFactory
 import config
 from sqlalchemy.sql.schema import Column, Table
 from sqlalchemy.sql.sqltypes import Date, Float, String
@@ -54,6 +54,5 @@ class Pedido(Base):
     produtos = relationship(
         'Produto', back_populates="pedidos", secondary='produto_pedido')
     cliente = relationship('Cliente', back_populates='pedidos')
-
 
 # Base.metadata.create_all(engine)
